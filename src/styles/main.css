@@ -1,0 +1,39 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply underline;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50 focus:outline-none focus:ring-1 focus:ring-pink-500 dark:focus:ring-pink-400 focus:text-pink-500 dark:focus:text-pink-400 rounded-md focus:ring-offset-2 ring-offset-transparent;
+  }
+  .badge {
+    @apply bg-gray-100 text-gray-800 text-sm font-medium inline-flex items-center px-3.5 py-1 rounded mr-2 dark:bg-gray-700 dark:text-gray-300;
+  }
+  .badge > svg {
+    @apply mr-1 w-4 h-4;
+  }
+  .link-box {
+    @apply relative;
+  }
+  .link-box a[href]:not(.link-overlay), abbr[title] {
+    @apply relative z-10;
+  }
+  .link-overlay {
+    @apply static;
+  }
+  .link-overlay::before {
+    content: '';
+    cursor: inherit;
+    @apply absolute block top-0 left-0 z-0 w-full h-full
+  }
+}
